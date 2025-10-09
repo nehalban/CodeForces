@@ -1,0 +1,32 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+void solve() {
+    int n;
+    cin>>n;
+    int x=-1;
+    bool ans=true;
+    for (int i = 0; i < n; i++) {
+        int k;
+        cin >> k;
+        if (k!=-1 && x==-1) {
+            if (k==0) ans= false;
+            else x=k;
+        }
+        else if (k!=-1 && x!=k) ans= false;
+    }
+    cout<<(ans?"YES":"NO")<<'\n';
+
+}
+
+int main(){
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+    int t;
+    cin>>t;
+    while (t--)
+    {
+        solve();
+    }
+}

@@ -1,0 +1,43 @@
+#include <iostream>
+#include <set>
+#include <string>
+#include <algorithm>
+#include <vector>
+#include <bitset>
+#include <queue>
+#include <map>
+#include <cstdlib> 
+#include <ctime>
+#include <cmath>
+using namespace std;
+
+void solve() {
+    int n, c, ans = 0, ans_=0;
+    cin >> n >> c;
+    vector<int> a;
+    for (int i = 0; i < n; i++)
+    {
+        int x;
+        cin >> x;
+        if (x > c) ans++;
+        else a.push_back(x);
+    }
+    sort(a.begin(), a.end(), greater<>());
+    for (int i = 0; i < a.size(); i++)
+    {
+        if (a[i] <= (c / (1<<ans_))) ans_++;
+    }
+    ans += a.size()-ans_;
+    cout << ans << '\n';
+    return;
+}
+
+int main() {
+    int t;
+    cin >> t;
+    while (t--)
+    {
+        solve();
+    }
+    return 0;
+}
